@@ -1,0 +1,62 @@
+.accordion {
+  border-bottom: 1px solid #ddd;
+  width: 800px;
+}
+
+.accordion-item {
+  border-top: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  transition: all .5s ease;
+}
+
+.accordion-item-header {
+  padding: 14px 38px;
+  font-size: 22px;
+  background: #f59b4d;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+  transition: all .5s ease;
+  &:before{
+    content: "";
+    position: absolute;
+    transform: matrix(-66%);
+    top: 34%;
+    left: 10px;
+    background-image: url("../images/icons/eye.svg");
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all .5s ease;
+  }
+}
+
+.accordion-item-content {
+  background: #fff;
+  transition: all .4s ease;
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  font-size: 22px;
+}
+
+.accordion-item.show .accordion-item-content {
+  padding: 30px 45px;
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  transition: all .5s ease;
+}
+
+.accordion-item.show .accordion-item-header {
+  background: #666666d1;
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+  transition: all .5s ease;
+  &:before{
+    transition: all .5s ease;
+    background-image: url("../images/icons/eye-off.svg");
+  }
+}
